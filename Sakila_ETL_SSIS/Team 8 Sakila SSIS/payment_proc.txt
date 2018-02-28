@@ -1,0 +1,26 @@
+CREATE PROCEDURE dbo.UpdatePayment
+@payment_id int,
+@customer_id int,
+@staff_id int,
+@rental_id int,
+@amount int,
+@payment_date date,
+@last_update date
+
+AS
+
+BEGIN
+
+SET NOCOUNT ON;
+
+UPDATE [sakila].[dbo].[payment]
+
+SET
+
+[customer_id]=@customer_id, [staff_id]=@staff_id,
+[rental_id]=@rental_id, [amount]=@amount,
+[payment_date]=@payment_date, [last_update]=@last_update
+WHERE [payment_id]=@payment_id
+
+END
+

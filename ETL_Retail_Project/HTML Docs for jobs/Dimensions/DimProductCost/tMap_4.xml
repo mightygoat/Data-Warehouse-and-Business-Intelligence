@@ -1,0 +1,80 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<externalNode i18n.job.component.parameters="Component Parameters:" i18n.job.properties="Properties" i18n.job.values="Values" i18n.mapper.table.for="Mapper table for " i18n.mapper.table.properties="Mapper table Properties" i18n.job.name="Name" i18n.tmap.matching.mode="Matching-mode" i18n.mapper.table.isminimized="isMinimized" i18n.tmap.isreject="isReject" i18n.tmap.isrejectinnnerjoin="isRejectInnerJoin" i18n.tmap.isinnerjoin="isInnerJoin" i18n.tmap.expressionfilter="expressionFilter" i18n.mapper.table.metadata.entries="Metadata Table Entries" i18n.job.type="Type" i18n.mapper.table.expression="Expression" i18n.tmap.isnullable="isNullable" i18n.tmap.constraint.entries="Constraint Table Entries" name="tMap_4" preview="pictures/_xPtugCcYEee30ufUxTTDpQ-tMap_4-PREVIEW.bmp">
+  <parameters>
+    <column name="tStatCatcher Statistics">false</column>
+    <column name="Enable parallel execution">false</column>
+    <column name="Mapping links display as:">AUTO</column>
+    <column name="Temp data directory path:"></column>
+    <column name="Max buffer size (nb of rows):">2000000</column>
+    <column name="Ignore trailing zeros for BigDecimal">true</column>
+    <column name="Show Information">false</column>
+    <column name="Comment"><![CDATA[]]></column>
+    <column name="Use an existing validation rule">false</column>
+  </parameters>
+  <mapperTable type="input">
+    <table name="SQLServer" matching-mode="UNIQUE_MATCH" lookup-mode="LOAD_ONCE" isMinimized="false" isReject="false" isRejectInnerJoin="false" isInnerJoin="false" isPersistent="false" expressionFilter="null" activateExpressionFilter="false" activateCondensedTool="false">
+      <metadataTableEntries>
+        <entry name="GeographyKey" type="int" expression="" isNullable="false"/>
+        <entry name="GeographyType" type="String" expression="" isNullable="false"/>
+        <entry name="ContinentName" type="String" expression="" isNullable="false"/>
+        <entry name="ContinentCode" type="String" expression="" isNullable="true"/>
+        <entry name="Country" type="String" expression="" isNullable="true"/>
+        <entry name="Country_name" type="String" expression="" isNullable="true"/>
+        <entry name="RegionCountryName" type="String" expression="" isNullable="true"/>
+        <entry name="ISO_3166_numeric" type="Integer" expression="" isNullable="true"/>
+        <entry name="ISO_3166_alpha_2" type="String" expression="" isNullable="true"/>
+        <entry name="ISO_3166_alpha_3" type="String" expression="" isNullable="true"/>
+        <entry name="Region" type="String" expression="" isNullable="true"/>
+        <entry name="Subdiv_name" type="String" expression="" isNullable="false"/>
+        <entry name="ISO_3166_2_subdiv" type="String" expression="" isNullable="false"/>
+        <entry name="Subdiv_code" type="String" expression="" isNullable="false"/>
+        <entry name="StateProvinceName" type="String" expression="" isNullable="true"/>
+        <entry name="StateProvinceCode" type="String" expression="" isNullable="true"/>
+        <entry name="City" type="String" expression="" isNullable="true"/>
+        <entry name="CityName" type="String" expression="" isNullable="true"/>
+        <entry name="Latitude" type="BigDecimal" expression="" isNullable="true"/>
+        <entry name="Longitude" type="BigDecimal" expression="" isNullable="true"/>
+        <entry name="ETLLoadID" type="Integer" expression="" isNullable="true"/>
+        <entry name="LoadDate" type="java.util.Date" expression="" isNullable="true"/>
+        <entry name="UpdateDate" type="java.util.Date" expression="" isNullable="true"/>
+        <entry name="SOR_ID" type="Integer" expression="" isNullable="true"/>
+      </metadataTableEntries>
+    </table>
+  </mapperTable>
+  <mapperTable type="output">
+    <table name="op4" isMinimized="false" isReject="false" isRejectInnerJoin="false" isInnerJoin="false" isPersistent="false" expressionFilter="null" activateExpressionFilter="false" activateCondensedTool="false">
+      <metadataTableEntries>
+        <entry name="GeographyKey" type="int" expression="SQLServer.GeographyKey" isNullable="false"/>
+        <entry name="GeographyType" type="String" expression="SQLServer.GeographyType" isNullable="false"/>
+        <entry name="ContinentName" type="String" expression="SQLServer.ContinentName" isNullable="false"/>
+        <entry name="ContinentCode" type="String" expression="SQLServer.ContinentCode" isNullable="true"/>
+        <entry name="Country" type="String" expression="SQLServer.Country" isNullable="true"/>
+        <entry name="Country_name" type="String" expression="SQLServer.Country_name" isNullable="true"/>
+        <entry name="RegionCountryName" type="String" expression="SQLServer.RegionCountryName" isNullable="true"/>
+        <entry name="ISO_3166_numeric" type="Integer" expression="SQLServer.ISO_3166_numeric" isNullable="true"/>
+        <entry name="ISO_3166_alpha_2" type="String" expression="SQLServer.ISO_3166_alpha_2" isNullable="true"/>
+        <entry name="ISO_3166_alpha_3" type="String" expression="SQLServer.ISO_3166_alpha_3" isNullable="true"/>
+        <entry name="Region" type="String" expression="SQLServer.Region" isNullable="true"/>
+        <entry name="Subdiv_name" type="String" expression="SQLServer.Subdiv_name" isNullable="false"/>
+        <entry name="ISO_3166_2_subdiv" type="String" expression="SQLServer.ISO_3166_2_subdiv" isNullable="false"/>
+        <entry name="Subdiv_code" type="String" expression="SQLServer.Subdiv_code" isNullable="false"/>
+        <entry name="StateProvinceName" type="String" expression="SQLServer.StateProvinceName" isNullable="true"/>
+        <entry name="StateProvinceCode" type="String" expression="SQLServer.StateProvinceCode" isNullable="true"/>
+        <entry name="City" type="String" expression="SQLServer.City" isNullable="true"/>
+        <entry name="CityName" type="String" expression="SQLServer.CityName" isNullable="true"/>
+        <entry name="Latitude" type="BigDecimal" expression="SQLServer.Latitude" isNullable="true"/>
+        <entry name="Longitude" type="BigDecimal" expression="SQLServer.Longitude" isNullable="true"/>
+        <entry name="Latitude_Geometry" type="BigDecimal" expression="" isNullable="true"/>
+        <entry name="Longitude_Geometry" type="BigDecimal" expression="" isNullable="true"/>
+        <entry name="SOR_ID" type="int" expression="SQLServer.SOR_ID" isNullable="false"/>
+        <entry name="SOR_LoadDate" type="java.util.Date" expression="SQLServer.LoadDate " isNullable="true"/>
+        <entry name="SOR_UpdateDate" type="java.util.Date" expression="SQLServer.UpdateDate " isNullable="true"/>
+        <entry name="DI_Job_ID" type="String" expression="context.getProperty(&quot;vJobPID&quot;)" isNullable="false"/>
+      </metadataTableEntries>
+    </table>
+  </mapperTable>
+  <mapperTable type="var">
+    <table name="Var" isMinimized="true" isReject="false" isRejectInnerJoin="false" isInnerJoin="false" isPersistent="false" expressionFilter="null" activateExpressionFilter="false" activateCondensedTool="false"/>
+  </mapperTable>
+</externalNode>

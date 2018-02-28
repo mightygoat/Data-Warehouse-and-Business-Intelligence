@@ -1,0 +1,93 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<externalNode i18n.job.component.parameters="Component Parameters:" i18n.job.properties="Properties" i18n.job.values="Values" i18n.mapper.table.for="Mapper table for " i18n.mapper.table.properties="Mapper table Properties" i18n.job.name="Name" i18n.tmap.matching.mode="Matching-mode" i18n.mapper.table.isminimized="isMinimized" i18n.tmap.isreject="isReject" i18n.tmap.isrejectinnnerjoin="isRejectInnerJoin" i18n.tmap.isinnerjoin="isInnerJoin" i18n.tmap.expressionfilter="expressionFilter" i18n.mapper.table.metadata.entries="Metadata Table Entries" i18n.job.type="Type" i18n.mapper.table.expression="Expression" i18n.tmap.isnullable="isNullable" i18n.tmap.constraint.entries="Constraint Table Entries" name="tMap_2" preview="pictures/_jh1KcCiSEeeb66pzUq7D8Q-tMap_2-PREVIEW.bmp">
+  <parameters>
+    <column name="tStatCatcher Statistics">false</column>
+    <column name="Enable parallel execution">false</column>
+    <column name="Mapping links display as:">AUTO</column>
+    <column name="Temp data directory path:"></column>
+    <column name="Max buffer size (nb of rows):">2000000</column>
+    <column name="Ignore trailing zeros for BigDecimal">true</column>
+    <column name="Show Information">false</column>
+    <column name="Comment"><![CDATA[]]></column>
+    <column name="Use an existing validation rule">false</column>
+  </parameters>
+  <mapperTable type="input">
+    <table name="store_postgres" matching-mode="UNIQUE_MATCH" lookup-mode="LOAD_ONCE" isMinimized="false" isReject="false" isRejectInnerJoin="false" isInnerJoin="false" isPersistent="false" expressionFilter="null" activateExpressionFilter="false" activateCondensedTool="false">
+      <metadataTableEntries>
+        <entry name="storeid" type="int" expression="" isNullable="false"/>
+        <entry name="storekey" type="int" expression="" isNullable="false"/>
+        <entry name="storemanager" type="Integer" expression="" isNullable="true"/>
+        <entry name="storetype" type="String" expression="" isNullable="true"/>
+        <entry name="storename" type="String" expression="" isNullable="false"/>
+        <entry name="storedescription" type="String" expression="" isNullable="false"/>
+        <entry name="status" type="String" expression="" isNullable="false"/>
+        <entry name="opendate" type="java.util.Date" expression="" isNullable="false"/>
+        <entry name="closedate" type="java.util.Date" expression="" isNullable="true"/>
+        <entry name="entitykey" type="Integer" expression="" isNullable="true"/>
+        <entry name="zipcode" type="String" expression="" isNullable="true"/>
+        <entry name="zipcodeextension" type="String" expression="" isNullable="true"/>
+        <entry name="storephone" type="String" expression="" isNullable="true"/>
+        <entry name="storefax" type="String" expression="" isNullable="true"/>
+        <entry name="addressline1" type="String" expression="" isNullable="true"/>
+        <entry name="addressline2" type="String" expression="" isNullable="true"/>
+        <entry name="closereason" type="String" expression="" isNullable="true"/>
+        <entry name="employeecount" type="Integer" expression="" isNullable="true"/>
+        <entry name="sellingareasize" type="Double" expression="" isNullable="true"/>
+        <entry name="lastremodeldate" type="java.util.Date" expression="" isNullable="true"/>
+        <entry name="geographykey" type="int" expression="" isNullable="false"/>
+        <entry name="etlloadid" type="Integer" expression="" isNullable="true"/>
+        <entry name="loaddate" type="java.util.Date" expression="" isNullable="true"/>
+        <entry name="updatedate" type="java.util.Date" expression="" isNullable="true"/>
+        <entry name="sor_id" type="Integer" expression="" isNullable="true"/>
+      </metadataTableEntries>
+    </table>
+    <table name="geo_lkp_postgres" matching-mode="UNIQUE_MATCH" lookup-mode="LOAD_ONCE" isMinimized="false" isReject="false" isRejectInnerJoin="false" isInnerJoin="false" isPersistent="false" expressionFilter="null" activateExpressionFilter="false" activateCondensedTool="false">
+      <metadataTableEntries>
+        <entry name="GeographySK" type="int" expression="" isNullable="false"/>
+        <entry name="GeographyKey" type="int" expression="store_postgres.geographykey " isNullable="false"/>
+      </metadataTableEntries>
+    </table>
+    <table name="territory_lkp_postgres" matching-mode="UNIQUE_MATCH" lookup-mode="LOAD_ONCE" isMinimized="false" isReject="false" isRejectInnerJoin="false" isInnerJoin="false" isPersistent="false" expressionFilter="null" activateExpressionFilter="false" activateCondensedTool="false">
+      <metadataTableEntries>
+        <entry name="SalesTerritorySK" type="int" expression="" isNullable="false"/>
+        <entry name="GeographySK" type="int" expression="geo_lkp_postgres.GeographySK " isNullable="false"/>
+      </metadataTableEntries>
+    </table>
+  </mapperTable>
+  <mapperTable type="output">
+    <table name="op1" isMinimized="false" isReject="false" isRejectInnerJoin="false" isInnerJoin="false" isPersistent="false" expressionFilter="null" activateExpressionFilter="false" activateCondensedTool="false">
+      <metadataTableEntries>
+        <entry name="StoreID" type="int" expression="store_postgres.storeid" isNullable="false"/>
+        <entry name="StoreKey" type="int" expression="store_postgres.storekey" isNullable="false"/>
+        <entry name="SalesTerritorySK" type="Integer" expression="territory_lkp_postgres.SalesTerritorySK" isNullable="true"/>
+        <entry name="StoreManager" type="Integer" expression="store_postgres.storemanager" isNullable="true"/>
+        <entry name="StoreType" type="String" expression="store_postgres.storetype" isNullable="true"/>
+        <entry name="StoreName" type="String" expression="store_postgres.storename" isNullable="false"/>
+        <entry name="StoreDescription" type="String" expression="store_postgres.storedescription" isNullable="false"/>
+        <entry name="Status" type="String" expression="store_postgres.status" isNullable="false"/>
+        <entry name="OpenDate" type="java.util.Date" expression="store_postgres.opendate" isNullable="false"/>
+        <entry name="CloseDate" type="java.util.Date" expression="store_postgres.closedate" isNullable="true"/>
+        <entry name="EntityKey" type="Integer" expression="store_postgres.entitykey" isNullable="true"/>
+        <entry name="ZipCode" type="String" expression="store_postgres.zipcode" isNullable="true"/>
+        <entry name="ZipCodeExtension" type="String" expression="store_postgres.zipcodeextension" isNullable="true"/>
+        <entry name="StorePhone" type="String" expression="store_postgres.storephone" isNullable="true"/>
+        <entry name="StoreFax" type="String" expression="store_postgres.storefax" isNullable="true"/>
+        <entry name="AddressLine1" type="String" expression="store_postgres.addressline1" isNullable="true"/>
+        <entry name="AddressLine2" type="String" expression="store_postgres.addressline2" isNullable="true"/>
+        <entry name="GeographySK" type="int" expression="geo_lkp_postgres.GeographySK" isNullable="false"/>
+        <entry name="CloseReason" type="String" expression="store_postgres.closereason" isNullable="true"/>
+        <entry name="EmployeeCount" type="Integer" expression="store_postgres.employeecount" isNullable="true"/>
+        <entry name="SellingAreaSize" type="Double" expression="store_postgres.sellingareasize" isNullable="true"/>
+        <entry name="LastRemodelDate" type="java.util.Date" expression="store_postgres.lastremodeldate" isNullable="true"/>
+        <entry name="SOR_ID" type="int" expression="store_postgres.sor_id" isNullable="false"/>
+        <entry name="SOR_LoadDate" type="java.util.Date" expression="store_postgres.loaddate " isNullable="true"/>
+        <entry name="SOR_UpdateDate" type="java.util.Date" expression="store_postgres.updatedate " isNullable="true"/>
+        <entry name="DI_Job_ID" type="String" expression="context.getProperty(&quot;vJobPID&quot;)" isNullable="false"/>
+      </metadataTableEntries>
+    </table>
+  </mapperTable>
+  <mapperTable type="var">
+    <table name="Var" isMinimized="true" isReject="false" isRejectInnerJoin="false" isInnerJoin="false" isPersistent="false" expressionFilter="null" activateExpressionFilter="false" activateCondensedTool="false"/>
+  </mapperTable>
+</externalNode>
